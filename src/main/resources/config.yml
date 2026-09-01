@@ -1,0 +1,47 @@
+# =============================================================================
+# RWR-PlaceholderAPI v1.0.0
+# Author: Lozaine@TamaWish
+# =============================================================================
+# PlaceholderAPI expansion for ResourceWorldResetter.
+# This add-on never shades rwr-api; classes come from the running RWR plugin.
+# =============================================================================
+
+config-version: 1
+
+# -----------------------------------------------------------------------------
+# Locale
+# -----------------------------------------------------------------------------
+# Loads locales/<code>.yml from the data folder. Missing keys use English.
+locale: en_US
+
+# -----------------------------------------------------------------------------
+# Snapshot cache
+# -----------------------------------------------------------------------------
+# PlaceholderAPI may query every scoreboard tick. Snapshots are reused for this
+# many milliseconds, then refreshed lazily on the next request. Events invalidate
+# the cache immediately. Range: 250-10000.
+cache-ttl-ms: 1500
+
+# -----------------------------------------------------------------------------
+# Formatting
+# -----------------------------------------------------------------------------
+# ISO-like UTC timestamp used by %rwr_world_<id>_next_reset%.
+datetime-format: "yyyy-MM-dd HH:mm:ss 'UTC'"
+
+# Separator for %rwr_worlds%.
+worlds-separator: ", "
+
+boolean:
+  # Text returned by placeholders that expose a true/false value.
+  true: "true"
+  false: "false"
+
+# -----------------------------------------------------------------------------
+# Fallback Values
+# -----------------------------------------------------------------------------
+# Returned when RWR is unavailable, the world ID is unknown, or a best-effort
+# field (countdown / next reset / last outcome) has not been observed yet.
+# Keep these quoted when using values such as "null", "yes", or "no" so YAML
+# treats them as text.
+fallback: ""
+no-api-fallback: ""

@@ -1,0 +1,38 @@
+# =============================================================================
+# Bukkit Plugin Descriptor - RWR-PlaceholderAPI
+# Generated Maven values use ${...} syntax and should remain unchanged.
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Plugin Metadata
+# -----------------------------------------------------------------------------
+name: RWR-PlaceholderAPI
+version: '${project.version}'
+main: io.github.tamawish.rwr.placeholder.RwrPlaceholderPlugin
+api-version: '1.21'
+folia-supported: true
+load: POSTWORLD
+authors: [TamaWish, Lozaine]
+description: PlaceholderAPI expansion for ResourceWorldResetter on Spigot, CraftBukkit, Paper, Purpur, and Folia
+website: https://github.com/TamaWish/RWR-PlaceholderAPI
+softdepend:
+  - ResourceWorldResetter
+  - ResourceWorldResetter-Paper-Folia
+  - PlaceholderAPI
+
+# -----------------------------------------------------------------------------
+# Commands
+# -----------------------------------------------------------------------------
+commands:
+  rwrplaceholder:
+    description: Legacy alias for /rwr placeholder
+    usage: /rwr placeholder <reload|status>
+    aliases: [rwrpapi, rwrph]
+
+# -----------------------------------------------------------------------------
+# Permissions
+# -----------------------------------------------------------------------------
+permissions:
+  rwrplaceholder.admin:
+    description: Allows /rwr placeholder reload and status
+    default: op

@@ -1,0 +1,60 @@
+# =============================================================================
+# RWR-PlaceholderAPI English Locale (Default + Fallback)
+# =============================================================================
+# Runtime placeholders use the {name} form. Keep text inside braces unchanged.
+# You may freely translate or reword the surrounding text.
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Commands and Status
+# -----------------------------------------------------------------------------
+command:
+  no-permission: "You do not have permission: {permission}"
+  unknown: "Unknown subcommand. Use /rwr placeholder reload|status."
+  reload-success: "RWR-PlaceholderAPI configuration reloaded."
+  reload-failed: "Reload failed: {reason}"
+  status-header: "RWR-PlaceholderAPI status"
+  status-service: "RWR API: {state}"
+  status-papi: "PlaceholderAPI: {state}"
+  status-expansion: "Expansion: {state}"
+  status-worlds: "Cached worlds: {count}"
+
+# -----------------------------------------------------------------------------
+# Console Log Messages
+# -----------------------------------------------------------------------------
+log:
+  enabled: "RWR-PlaceholderAPI enabled. RWR API {api_state}; PlaceholderAPI {papi_state}."
+  enabled-degraded: "RWR-PlaceholderAPI enabled in degraded mode; placeholders will use fallbacks until dependencies are ready."
+  disabled-no-api: "RWR API is unavailable. The expansion will stay registered and return fallbacks until RWR enables."
+  disabled-no-papi: "PlaceholderAPI is unavailable. The expansion will register when PlaceholderAPI enables."
+
+# -----------------------------------------------------------------------------
+# World States
+# -----------------------------------------------------------------------------
+# Keys after "state-" match internal API values and must not be renamed.
+state-MANAGED: "managed"
+state-DISABLED: "disabled"
+state-PROTECTED: "protected"
+state-ORPHANED: "orphaned"
+
+# -----------------------------------------------------------------------------
+# Reset Phases
+# -----------------------------------------------------------------------------
+# Keys after "phase-" match internal API values and must not be renamed.
+phase-IDLE: "idle"
+phase-PRECHECK: "precheck"
+phase-EVACUATE: "evacuate"
+phase-REGENERATE: "regenerate"
+phase-VERIFY: "verify"
+phase-COMPLETE: "complete"
+phase-FAILED: "failed"
+phase-INTERRUPTED: "interrupted"
+
+# -----------------------------------------------------------------------------
+# Reset Outcomes
+# -----------------------------------------------------------------------------
+# Keys after "outcome-" are lookup identifiers and must not be renamed.
+outcome-success: "success"
+outcome-failed: "failed"
+outcome-cancelled: "cancelled"
+outcome-interrupted: "interrupted"
