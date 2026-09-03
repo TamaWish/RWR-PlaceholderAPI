@@ -15,7 +15,7 @@ class PluginDescriptorTest {
             String descriptor = new String(input.readAllBytes(), StandardCharsets.UTF_8);
             assertThat(descriptor).contains("folia-supported: true");
             assertThat(descriptor).contains("Spigot, CraftBukkit, Paper, Purpur, and Folia");
-            assertThat(descriptor).contains("version: '1.0.0'");
+            assertThat(descriptor).contains("version: '1.1.0'");
             assertThat(descriptor).doesNotContain("${project.version}");
             assertThat(descriptor).contains("ResourceWorldResetter");
             assertThat(descriptor).contains("ResourceWorldResetter-Paper-Folia");

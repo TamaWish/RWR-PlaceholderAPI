@@ -31,6 +31,9 @@ public final class PlaceholderParser {
         if (equalsIgnoreCase(raw, "worlds")) {
             return Optional.of(ParsedPlaceholder.global(PlaceholderKeys.WORLDS));
         }
+        if (equalsIgnoreCase(raw, "world_names")) {
+            return Optional.of(ParsedPlaceholder.global(PlaceholderKeys.WORLD_NAMES));
+        }
 
         Optional<PlaceholderKeys> playerKey = PlaceholderKeys.fromSuffix(raw);
         if (playerKey.isPresent() && playerKey.get().worldScoped()) {

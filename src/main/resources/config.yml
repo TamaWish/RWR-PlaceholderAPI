@@ -1,5 +1,5 @@
 # =============================================================================
-# RWR-PlaceholderAPI v1.0.0
+# RWR-PlaceholderAPI v1.1.0
 # Author: Lozaine@TamaWish
 # =============================================================================
 # PlaceholderAPI expansion for ResourceWorldResetter.
@@ -28,7 +28,7 @@ cache-ttl-ms: 1500
 # ISO-like UTC timestamp used by %rwr_world_<id>_next_reset%.
 datetime-format: "yyyy-MM-dd HH:mm:ss 'UTC'"
 
-# Separator for %rwr_worlds%.
+# Separator for %rwr_worlds% and %rwr_world_names%.
 worlds-separator: ", "
 
 boolean:

@@ -19,6 +19,17 @@ class PlaceholderParserTest {
     }
 
     @Test
+    void parsesGlobalWorldNamesList() {
+        Optional<PlaceholderParser.ParsedPlaceholder> parsed =
+                PlaceholderParser.parse("world_names", List.of("resource"));
+        assertThat(parsed).hasValueSatisfying(value -> {
+            assertThat(value.key()).isEqualTo(PlaceholderKeys.WORLD_NAMES);
+            assertThat(value.worldId()).isEmpty();
+            assertThat(value.playerWorld()).isFalse();
+        });
+    }
+
+    @Test
     void prefersLongestKnownWorldId() {
         List<String> ids = List.of("resource", "resource_nether");
         Optional<PlaceholderParser.ParsedPlaceholder> parsed =

@@ -22,6 +22,7 @@ class PlaceholderRendererTest {
         PlaceholderRenderer renderer = new PlaceholderRenderer(cache);
 
         assertThat(render(renderer, config, locale, "worlds")).isEqualTo("resource, resource_nether");
+        assertThat(render(renderer, config, locale, "world_names")).isEqualTo("Resource, Nether");
         assertThat(render(renderer, config, locale, "world_resource_name")).isEqualTo("Resource");
         assertThat(render(renderer, config, locale, "world_resource_world")).isEqualTo("resource_world");
         assertThat(render(renderer, config, locale, "world_resource_state")).isEqualTo("managed");

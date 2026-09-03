@@ -8,6 +8,7 @@ import java.util.Optional;
 /** Identifier suffixes supported by the {@code rwr} PlaceholderAPI expansion. */
 public enum PlaceholderKeys {
     WORLDS("worlds", false),
+    WORLD_NAMES("world_names", false),
     ID("id", true),
     NAME("name", true),
     WORLD("world", true),

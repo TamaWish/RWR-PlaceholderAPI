@@ -61,6 +61,7 @@ public final class RwrExpansion extends PlaceholderExpansion {
     public List<String> getPlaceholders() {
         List<String> placeholders = new ArrayList<>();
         placeholders.add("%rwr_worlds%");
+        placeholders.add("%rwr_world_names%");
         placeholders.add("%rwr_id%");
         placeholders.add("%rwr_name%");
         placeholders.add("%rwr_world%");

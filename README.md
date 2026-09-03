@@ -29,7 +29,7 @@ PlaceholderAPI expansion for [ResourceWorldResetter](https://github.com/TamaWish
 ## Installation
 
 1. Install ResourceWorldResetter for your server (**Spigot / CraftBukkit** → Spigot jar, **Paper / Purpur / Folia** → Paper-Folia jar) and PlaceholderAPI.
-2. Drop `RWR-PlaceholderAPI-1.0.0.jar` into `plugins/`.
+2. Drop `RWR-PlaceholderAPI-1.1.0.jar` into `plugins/`.
 3. Start the server once to generate `plugins/RWR-PlaceholderAPI/config.yml`.
 4. Use `%rwr_...%` placeholders in any PlaceholderAPI consumer (scoreboard, TAB, holograms, menus, chat).
 
@@ -46,6 +46,7 @@ World IDs may contain underscores. `%rwr_world_resource_nether_phase%` is matche
 | Placeholder | Meaning |
 |-------------|---------|
 | `%rwr_worlds%` | Comma-separated list of managed world IDs in RWR config order |
+| `%rwr_world_names%` | Comma-separated list of managed world display names in RWR config order |
 
 ### Per world
 
@@ -121,5 +122,3 @@ Compile-time dependencies are `rwr-api` (provided), `spigot-api` (provided), and
 ## License
 
 BSD 3-Clause. See [LICENSE](LICENSE).
-
-Marketplace paste files and development notes live in `docs/marketplace/` and `docs/dev/` and are excluded by `.gitignore`.

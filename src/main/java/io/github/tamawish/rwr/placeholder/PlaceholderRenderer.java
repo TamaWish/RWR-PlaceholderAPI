@@ -37,10 +37,8 @@ public final class PlaceholderRenderer {
             return config.noApiFallback();
         }
 
-        if (parsed.key() == PlaceholderKeys.WORLDS) {
-            return cache.refreshIfNeeded().worlds().stream()
-                    .map(CachedWorld::id)
-                    .collect(Collectors.joining(config.worldsSeparator()));
+        if (!parsed.key().worldScoped()) {
+            return renderWorldList(parsed.key(), config);
         }
 
         Optional<CachedWorld> world = resolveWorld(parsed, playerWorldName);
@@ -52,6 +50,9 @@ public final class PlaceholderRenderer {
         return switch (parsed.key()) {
             case WORLDS -> cache.refreshIfNeeded().worlds().stream()
                     .map(CachedWorld::id)
+                    .collect(Collectors.joining(config.worldsSeparator()));
+            case WORLD_NAMES -> cache.refreshIfNeeded().worlds().stream()
+                    .map(CachedWorld::displayName)
                     .collect(Collectors.joining(config.worldsSeparator()));
             case ID -> resolved.id();
             case NAME -> resolved.displayName();
@@ -76,6 +77,18 @@ public final class PlaceholderRenderer {
             case LAST_OUTCOME -> cache.lastOutcome(resolved.id())
                     .map(outcome -> label(locale, outcome.localeKey(), outcome.name().toLowerCase(Locale.ROOT)))
                     .orElse(config.fallback());
+        };
+    }
+
+    private String renderWorldList(PlaceholderKeys key, PlaceholderConfig config) {
+        return switch (key) {
+            case WORLDS -> cache.refreshIfNeeded().worlds().stream()
+                    .map(CachedWorld::id)
+                    .collect(Collectors.joining(config.worldsSeparator()));
+            case WORLD_NAMES -> cache.refreshIfNeeded().worlds().stream()
+                    .map(CachedWorld::displayName)
+                    .collect(Collectors.joining(config.worldsSeparator()));
+            default -> config.fallback();
         };
     }
 
